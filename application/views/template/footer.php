@@ -6,6 +6,7 @@
 
 
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/materialize.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/angular-materialize.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/prism/prism.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/chartist-js/chartist.min.js"></script>   

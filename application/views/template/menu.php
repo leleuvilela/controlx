@@ -22,15 +22,8 @@
           </div>
       </div>
     </li>
-    <li class="bold"><a href="principal.php" class="waves-effect waves-cyan"><i class="mdi-action-home"></i> Home</a></li>
-    <?php if($view == 'dashboard') { ?>
-    <!-- Dashboard menu -->
-    <li class="bold"><?php echo anchor('user', '<i class="mdi-action-home"></i> Editar Usuário', 'class="waves-effect waves-cyan"'); ?></li>
-    <?php } elseif($view == 'users') { ?>
-    <!-- Users menu -->
-    <li class="bold"><?php echo anchor('dashboard', '<i class="mdi-action-home"></i> Dashboard', 'class="waves-effect waves-cyan"'); ?></li>
-    <li class="bold"><?php echo anchor('user/add', '<i class="mdi-action-home"></i> Adicionar Usuário', 'class="waves-effect waves-cyan"'); ?></li>
-    <?php } ?>
+    <li class="bold"><a href="#/" class="waves-effect waves-cyan"><i class="mdi-action-home"></i> Home</a></li>
+    <li class="bold"><?php echo anchor('#/items', '<i class="mdi-action-home"></i> Adicionar Item', 'class="waves-effect waves-cyan"'); ?></li>
     <li class="bold"><?php echo anchor('login/logout', '<i class="mdi-action-home"></i> Logout', 'class="waves-effect waves-cyan"'); ?></li>
   </ul>
   <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>

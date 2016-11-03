@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  
-class Welcome_Model extends CI_Model {
+class Dashboard_Model extends CI_Model {
  
     public function get() {
         $this->db->select('*');
@@ -9,12 +9,34 @@ class Welcome_Model extends CI_Model {
     }
      
     public function post($itens){
-        $res = $this->db->insert('items', $itens);
+        if(!isset($itens->{'id'}))
+            $res = $this->db->insert('items', $itens);
+        else {
+            $this->db->where('id', $itens->{'id'});
+            $res = $this->db->update('items', $itens);
+        }
         if($res){
            return $this->get();
         }else{
            return FALSE;
         }
     }
-    
+
+    public function delete($id){
+        $this->db->where('id', $id);
+        $res = $this->db->delete('items');
+        if($res){
+           return $this->get();
+        }else{
+           return FALSE;
+        }
+    }
+
+    public function edit($id){
+        $this->db->select('*');
+        $this->db->from('items');
+        $this->db->where('id', $id);
+        return $this->db->get()->result();
+    }
+
 }

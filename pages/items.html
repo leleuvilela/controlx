@@ -1,0 +1,66 @@
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs" tabs>
+                        <li class="tab col s3"><a ng-class="{'active': exibirForm == 'add'}" href="#lista">Adicionar</a></li>
+                        <li class="tab col s3"><a ng-class="{'active': exibirForm == 'listar'}" href="#add">Listar</a></li>
+                    </ul>
+                </div>
+                <div id="lista" class="col s12">
+                	<br>
+
+					<form name="form" id="blogForm" ng-submit="criarPost()">
+						<input type="hidden" ng-model="form.id">
+						<div class="col s12">
+					        <div class="input-field col s6">
+								<input id="title" type="text" ng-model="form.title" placeholder=" " required>
+								<label for="title" class="center-align">Title</label>
+							</div>
+							<div class="input-field col s12">
+								<textarea id="description" ng-model="form.description" class="materialize-textarea" placeholder=" " required></textarea>
+								<label for="description" class="center-align">Description</label>
+							</div>
+							<div class="input-field col s6">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" message="Todos os campos não obrigatórios." duration="5000" toast='form.$invalid' value="submit" class="btn btn-primary">Insert Blog</button>
+								</div>
+							</div>
+
+					<!-- 		<div ng-show="form.$invalid" class="alert alert-warning">
+						        Todos os campos não obrigatórios.
+						    </div> -->
+						</div>
+					</form>
+                </div>
+                <div id="add" class="col s12">
+                	<table class="table table-bordered pagin-table">
+				        <thead>
+				            <tr>
+				                <th>ID</th>
+				                <th>Titulo da Mensagem</th>
+				                <th>Mensagem</th>
+				                <th>Ação</th>
+				            </tr>
+				        </thead>
+				        <tbody>
+				             <tr ng-repeat = "p in posts">
+				                   <td>{{ p.id }}</td>
+				                   <td>{{ p.title }}</td>
+				                   <td>{{ p.description }}</td>
+				                   <td>
+				                        <a ng-click="editarPost(p.id)" style="cursor: pointer;"><img src="images/edit.png" title="Edit User"/></a>
+				                        <a ng-click="apagarPost(p.id)" style="cursor: pointer;"><img src="images/remove.png" title="Remove User"/></a>
+				                   </td>
+				            </tr>
+				        </tbody>
+					</table>
+                </div>
+            </div>
+			
+
+			
+		</div>
+	</div>
+</div>
