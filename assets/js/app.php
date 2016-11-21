@@ -38,6 +38,19 @@ controlx.controller('homeController', ['$scope', '$location', '$log', function (
 }]);
  
 controlx.controller('itemsController', ['$scope', '$location', '$log','$http', function ($scope, $location, $log, $http){
+
+	var lorem = [
+      'Single latte grounds Sit rich black extra seasonal medium filter qui sugar caffeine. Cream arabica cup go body acerbic cinnamon espresso shot americano origin foam extraction froth café.',
+      'Iced french variety aftertaste milk ristretto white instant skinny filter redeye sweet galão whipped dripper. Cinnamon that so mazagran Coffee crema cup cortado turkish breve foam siphon panna french aroma.',
+      'Arabica cinnamon doppio viennese rich sugar percolator white cappuccino panna plunger fair extraction brewed. Saucer froth irish barista ut half aged Sit filter caffeine aftertaste sit macchiato.'
+    ];
+
+    $scope.tabs = [
+      {heading: 'Tab 1', content: lorem[0], disable: false},
+      {heading: 'Tab 2', content: lorem[1], disable: false},
+      {heading: 'Disabled Tab 3', content: 'This tab is disabled', disable: true},
+      {heading: 'Tab 4', content: lorem[2], disable: false}
+    ];
  
     $scope.frmToggle = function() {
 
@@ -55,22 +68,17 @@ controlx.controller('itemsController', ['$scope', '$location', '$log','$http', f
 		    $log.error(status);
 		});
 	 
-	$scope.criarPost = function(){
-	 
-	    $http.post(base_url+'dashboard/post/',
-	      {
-	      	   'id' : $scope.form.id,
-	           'title' : $scope.form.title,
-	           'description' : $scope.form.description
-	      })
-	 
+
+	$scope.postData = function(method, data){
+		console.log(data);
+		$http.post(base_url+method+'/post',
+			data)
 		.success(function (data) {
 		 	
 		    $scope.posts = data;
 		    $scope.exibirForm = 'listar';
-
+		    $scope.form = {};
 		});
-	 
 	}
 
 	$scope.editarPost = function(id){
@@ -80,7 +88,7 @@ controlx.controller('itemsController', ['$scope', '$location', '$log','$http', f
 		.success(function (data) {
 		 
 		    console.log($scope.form)
-		    $scope.form = data[0];
+		    $scope.form.values = data[0];
 		    
 		    $scope.exibirForm = 'add';
 
@@ -104,5 +112,7 @@ controlx.controller('itemsController', ['$scope', '$location', '$log','$http', f
 		});
 
 	}
+
+
  
 }]);

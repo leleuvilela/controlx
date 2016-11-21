@@ -39,7 +39,9 @@
     <link href="<?php echo base_url(); ?>assets/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="<?php echo base_url(); ?>assets/js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="<?php echo base_url(); ?>assets/js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
-    
+    <!-- <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/plugins/ng-materialize.min.css" /> -->
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/plugins/waves.min.css" />
+
     <?php if ($page_title == 'Login') {
     	echo "<link href=\"".base_url()."assets/css/layouts/page-center.css\" type=\"text/css\" rel=\"stylesheet\" media=\"screen,projection\">"; 
 	    }
