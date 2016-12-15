@@ -8,11 +8,9 @@
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/materialize.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/angular-materialize.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/ng-materialize.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/waves.min.js"></script>
-	<script type="text/javascript" src="//code.angularjs.org/1.6.0-rc.0/angular-animate.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/prism/prism.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/chartist-js/chartist.min.js"></script>   
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/chartist-js/chartist.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/formatter/jquery.formatter.min.js"></script> 
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/sparkline/sparkline-script.js"></script>

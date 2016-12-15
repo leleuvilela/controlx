@@ -39,19 +39,10 @@ controlx.controller('homeController', ['$scope', '$location', '$log', function (
  
 controlx.controller('itemsController', ['$scope', '$location', '$log','$http', function ($scope, $location, $log, $http){
 
-	var lorem = [
-      'Single latte grounds Sit rich black extra seasonal medium filter qui sugar caffeine. Cream arabica cup go body acerbic cinnamon espresso shot americano origin foam extraction froth café.',
-      'Iced french variety aftertaste milk ristretto white instant skinny filter redeye sweet galão whipped dripper. Cinnamon that so mazagran Coffee crema cup cortado turkish breve foam siphon panna french aroma.',
-      'Arabica cinnamon doppio viennese rich sugar percolator white cappuccino panna plunger fair extraction brewed. Saucer froth irish barista ut half aged Sit filter caffeine aftertaste sit macchiato.'
-    ];
+	$scope.nomeFuncao = "Item";
 
-    $scope.tabs = [
-      {heading: 'Tab 1', content: lorem[0], disable: false},
-      {heading: 'Tab 2', content: lorem[1], disable: false},
-      {heading: 'Disabled Tab 3', content: 'This tab is disabled', disable: true},
-      {heading: 'Tab 4', content: lorem[2], disable: false}
-    ];
- 
+	$scope.estadoBotao = "Adicionar";
+
     $scope.frmToggle = function() {
 
          $('#blogForm').slideToggle();
@@ -74,20 +65,21 @@ controlx.controller('itemsController', ['$scope', '$location', '$log','$http', f
 		$http.post(base_url+method+'/post',
 			data)
 		.success(function (data) {
-		 	
 		    $scope.posts = data;
 		    $scope.exibirForm = 'listar';
 		    $scope.form = {};
+		    $scope.estadoBotao = "Adicionar";
 		});
 	}
 
 	$scope.editarPost = function(id){
+	    $scope.estadoBotao = "Editar";
 	 
 	    $http.get(base_url+'dashboard/edit/'+id)
 	 
 		.success(function (data) {
 		 
-		    console.log($scope.form)
+
 		    $scope.form.values = data[0];
 		    
 		    $scope.exibirForm = 'add';

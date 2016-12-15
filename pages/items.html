@@ -5,7 +5,10 @@
                 <div class="col s12" style="padding-bottom: 20px;">
                 	<br>
 
-					<form name="form" id="blogForm" ng-submit="postData('dashboard', form.values)">
+                	<button class="btn btn-success" ng-click="frmToggle()">Adicionar {{nomeFuncao}}</button>
+					<br>
+
+					<form name="form" id="blogForm" ng-submit="postData('dashboard', form.values)" hidden>
 						<input type="hidden" ng-model="form.values.id">
 						<div class="col s12">
 					        <div class="input-field col s6">
@@ -18,7 +21,7 @@
 							</div>
 							<div class="input-field col s6">
 								<div class="col-sm-offset-2 col-sm-10">
-									<button type="submit" message="Todos os campos não obrigatórios." duration="5000" toast='form.$invalid' value="submit" class="btn btn-primary">Insert Blog</button>
+									<button type="submit" message="Todos os campos não obrigatórios." duration="5000" toast='form.$invalid' value="submit" class="btn btn-primary">{{estadoBotao}}</button>
 								</div>
 							</div>
 
