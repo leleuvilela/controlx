@@ -1,0 +1,77 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12">
+            <div class="row">
+                <div class="col s12" style="padding-bottom: 20px;">
+                	<br>
+
+                	<button class="btn btn-success" ng-click="frmToggle()">Adicionar {{nomeFuncao}}</button>
+					<br>
+
+					<form name="form" id="thisForm" ng-submit="postData('main', form.values, form.file)" enctype="multipart/form-data" hidden>
+						<input type="hidden" ng-model="form.values.id">
+						<div class="col s12">
+					        <div class="input-field col s6">
+								<input id="title" type="text" ng-model="form.values.title" placeholder=" " required>
+								<label for="title" class="center-align">Title</label>
+							</div>
+							<div class="input-field col s12">
+								<textarea id="description" ng-model="form.values.description" class="materialize-textarea" placeholder=" " required></textarea>
+								<label for="description" class="center-align">Description</label>
+							</div>
+							<div class="input-field col s8">
+								<div class="file-field input-field">
+							      <div class="btn">
+							        <span>File</span>
+							        <input type="file" file-model="form.file.file">
+							      </div>
+							      <div class="file-path-wrapper">
+							        <input class="file-path validate" type="text">
+							      </div>
+							    </div>
+							</div>
+							<div class="input-field col s4">
+								<input id="filetitle" type="text" ng-model="form.file.title" placeholder=" " required>
+								<label for="filetitle" class="center-align">File Title</label>
+							</div>
+							<div class="input-field col s6">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" message="Todos os campos não obrigatórios." duration="5000" toast='form.$invalid' value="submit" class="btn btn-primary">{{estadoBotao}}</button>
+								</div>
+							</div>
+					<!-- 		<div ng-show="form.$invalid" class="alert alert-warning">
+						        Todos os campos não obrigatórios.
+						    </div> -->
+						</div>
+					</form>
+                </div>
+                <div class="col s12">
+                	<table class="table table-bordered pagin-table">
+				        <thead>
+				            <tr>
+				                <th>ID</th>
+				                <th>Titulo da Mensagem</th>
+				                <th>Mensagem</th>
+				                <th>Ação</th>
+				            </tr>
+				        </thead>
+				        <tbody>
+				             <tr ng-repeat = "p in posts">
+				                   <td>{{ p.id }}</td>
+				                   <td>{{ p.title }}</td>
+				                   <td>{{ p.description }}</td>
+				                   <td>
+				                        <a ng-click="editarPost(p.id);  frmOpen();" style="cursor: pointer;"><img src="/controlx/images/edit.png" title="Edit User"/></a>
+				                        <a ng-click="apagarPost(p.id)" style="cursor: pointer;"><img src="/controlx/images/remove.png" title="Remove User"/></a>
+				                   </td>
+				            </tr>
+				        </tbody>
+					</table>
+                </div>
+            </div>
+			
+
+			
+		</div>
+	</div>
+</div>

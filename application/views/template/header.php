@@ -16,13 +16,11 @@
     <title>Control X<?php if (isset($page_title)) { echo ' | '.$page_title; } ?></title>
 
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
      
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/angular.min.js"></script>
      
-    <script src="https://code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
-     
-    <script src="https://code.angularjs.org/1.5.0-rc.1/angular-route.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/angular-route.min.js"></script>
      
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/app.php"></script>
     
