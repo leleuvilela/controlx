@@ -43,8 +43,8 @@
     <!-- <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/plugins/waves.min.css" /> -->
 
     <?php if ($page_title == 'Login') {
-    	echo "<link href=\"".base_url()."assets/css/layouts/page-center.css\" type=\"text/css\" rel=\"stylesheet\" media=\"screen,projection\">"; 
-	    }
+        echo "<link href=\"".base_url()."assets/css/layouts/page-center.css\" type=\"text/css\" rel=\"stylesheet\" media=\"screen,projection\">"; 
+        }
     ?>
     
     <!--[if IE]>

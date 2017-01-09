@@ -45,11 +45,15 @@ controlx.controller('itemsController', ['$scope', '$location', '$log','$http', f
 
     $scope.frmToggle = function() {
 
-         $('#blogForm').slideToggle();
+         $('#thisForm').slideToggle();
 
     }
+
+    $scope.frmOpen = function (){
+    	$('#thisForm').slideDown();
+    }
  
-	$http.get(base_url+'dashboard/get')
+	$http.get(base_url+'main/get')
 	 
 		.success(function(data) {
 		    $scope.posts = data;
@@ -75,7 +79,7 @@ controlx.controller('itemsController', ['$scope', '$location', '$log','$http', f
 	$scope.editarPost = function(id){
 	    $scope.estadoBotao = "Editar";
 	 
-	    $http.get(base_url+'dashboard/edit/'+id)
+	    $http.get(base_url+'main/edit/'+id)
 	 
 		.success(function (data) {
 		 
@@ -92,7 +96,7 @@ controlx.controller('itemsController', ['$scope', '$location', '$log','$http', f
 
 	$scope.apagarPost = function(id){
 
-		$http.post(base_url+'dashboard/delete',
+		$http.post(base_url+'main/delete',
 	      {
 	           'id' : id,
 	      })

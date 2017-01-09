@@ -23,7 +23,7 @@
       </div>
     </li>
     <li class="bold"><a href="#/" class="waves-effect waves-cyan"><i class="mdi-action-home"></i> Home</a></li>
-    <li class="bold"><?php echo anchor('dashboard/#/items', '<i class="mdi-action-home"></i> Adicionar Item', 'class="waves-effect waves-cyan"'); ?></li>
+    <li class="bold"><?php echo anchor('main/#/items', '<i class="mdi-action-home"></i> Adicionar Item', 'class="waves-effect waves-cyan"'); ?></li>
     <li class="bold"><?php echo anchor('login/logout', '<i class="mdi-action-home"></i> Logout', 'class="waves-effect waves-cyan"'); ?></li>
   </ul>
   <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>

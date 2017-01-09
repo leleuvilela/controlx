@@ -6,7 +6,7 @@ class Login extends CI_Controller {
     	$this->load->model('user_model');
 
     	if($this->session->userdata('logged'))
-    		redirect('dashboard');
+    		redirect('main');
 
         // Load View
         $data['page_title']  = "Login";
@@ -31,7 +31,7 @@ class Login extends CI_Controller {
 	            'level' => $result['level']
 	        ));
 	 
-	        redirect('dashboard');
+	        redirect('main');
 	    } else {
 	        // Load View
 	        $data['page_title']  = "Login";

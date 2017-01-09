@@ -8,7 +8,6 @@
                 	<button class="btn btn-success" ng-click="frmToggle()">Adicionar {{nomeFuncao}}</button>
 					<br>
 
-					<form name="form" id="blogForm" ng-submit="postData('dashboard', form.values)" hidden>
 						<input type="hidden" ng-model="form.values.id">
 						<div class="col s12">
 					        <div class="input-field col s6">
@@ -47,7 +46,7 @@
 				                   <td>{{ p.title }}</td>
 				                   <td>{{ p.description }}</td>
 				                   <td>
-				                        <a ng-click="editarPost(p.id)" style="cursor: pointer;"><img src="/controlx/images/edit.png" title="Edit User"/></a>
+				                        <a ng-click="editarPost(p.id);  frmOpen();" style="cursor: pointer;"><img src="/controlx/images/edit.png" title="Edit User"/></a>
 				                        <a ng-click="apagarPost(p.id)" style="cursor: pointer;"><img src="/controlx/images/remove.png" title="Remove User"/></a>
 				                   </td>
 				            </tr>
